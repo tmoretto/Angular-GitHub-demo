@@ -1,0 +1,16 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <th>Nome</th>
+      <th>Nome Completo</th>
+      <th>Stars</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let repo of repos">
+        <td>{{repo.name}}</td>
+        <td>{{repo.full_name}}</td>
+        <td>{{repo.stargazers_count}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

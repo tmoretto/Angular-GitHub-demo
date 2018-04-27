@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ListuserComponent } from './components/listuser/listuser.component';
 import { UserService } from './shared-service/user.service';
+import { ListrepoComponent } from './components/listrepo/listrepo.component';
 
 const appRoutes:Routes=[
   { path: '', component:ListuserComponent }
@@ -14,7 +15,8 @@ const appRoutes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
-    ListuserComponent
+    ListuserComponent,
+    ListrepoComponent
   ],
   imports: [
     BrowserModule,

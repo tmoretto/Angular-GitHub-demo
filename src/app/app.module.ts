@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { ListuserComponent } from './components/listuser/listuser.component';
 import { UserService } from './shared-service/user.service';
 import { ListrepoComponent } from './components/listrepo/listrepo.component';
+import { RepoService } from './shared-service/repo.service';
 
 const appRoutes:Routes=[
-  { path: '', component:ListuserComponent }
+  { path: 'user', component:ListuserComponent },
+  { path: 'repos', component:ListrepoComponent },
 ]
 
 @NgModule({
@@ -23,7 +25,10 @@ const appRoutes:Routes=[
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserService],
+  providers: [
+    UserService, 
+    RepoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

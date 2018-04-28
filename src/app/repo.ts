@@ -1,6 +1,6 @@
 export class Repo {
-    id:Number;
+    id:number;
     name:string;
     full_name:string;
-    stargazers_count:Number;
+    stargazers_count:number;
 }

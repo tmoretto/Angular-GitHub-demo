@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { GithubService } from './shared-service/github.service';
 import { ListuserComponent } from './components/listuser/listuser.component';
 import { ListrepoComponent } from './components/listrepo/listrepo.component';
+import { FinduserComponent } from './components/finduser/finduser.component';
 
 const appRoutes:Routes=[
+  { path: 'finduser', component:FinduserComponent },
   { path: 'user', component:ListuserComponent },
   { path: 'repos', component:ListrepoComponent },
 ]
@@ -17,7 +19,8 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     ListuserComponent,
-    ListrepoComponent
+    ListrepoComponent,
+    FinduserComponent
   ],
   imports: [
     BrowserModule,

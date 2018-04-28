@@ -1,16 +1,16 @@
 <div class="container">
   <table class="table table-striped">
     <thead>
-      <th>Nome</th>
-      <th>Nome Completo</th>
+      <th>Nome do Repositório</th>
       <th>Stars</th>
     </thead>
     <tbody>
       <tr *ngFor="let repo of repos">
         <td>{{repo.name}}</td>
-        <td>{{repo.full_name}}</td>
         <td>{{repo.stargazers_count}}</td>
       </tr>
     </tbody>
   </table>
+  <button class="btn btn-primary" (click)="sortByName()">Ordenar por Nome</button>
+  <button class="btn btn-primary" (click)="sortByStar()">Ordenar por Stars</button>
 </div>

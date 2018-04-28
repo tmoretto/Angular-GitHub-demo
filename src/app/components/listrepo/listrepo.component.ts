@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RepoService } from '../../shared-service/repo.service';
+import { GithubService } from '../../shared-service/github.service';
 import { Repo } from '../../repo';
 import { Router } from '@angular/router';
 
@@ -12,10 +12,10 @@ export class ListrepoComponent implements OnInit {
 
   private repos:Repo[];
 
-  constructor(private _repoService:RepoService, private _router:Router) { }
+  constructor(private _githubService:GithubService, private _router:Router) { }
 
   ngOnInit() {
-    this._repoService.getRepos('tmoretto').subscribe((repos) => {
+    this._githubService.getRepos('tmoretto').subscribe((repos) => {
       this.repos = repos;
     },(error)=>{ 
       console.error(error);

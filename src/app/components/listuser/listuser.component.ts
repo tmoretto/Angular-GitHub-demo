@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../shared-service/user.service';
+import { GithubService } from '../../shared-service/github.service';
 import { User } from '../../user';
 import { Router } from '@angular/router';
 
@@ -11,14 +11,14 @@ import { Router } from '@angular/router';
 export class ListuserComponent implements OnInit {
   private user:User;
 
-  constructor(private _userService:UserService, private _router:Router) { }
+  constructor(private _githubService:GithubService, private _router:Router) { }
 
   ngOnInit() {
     this.findUser('tmoretto');
   }
 
   findUser(login:string) {
-    this._userService.getUser(login).subscribe((user) => {
+    this._githubService.getUser(login).subscribe((user) => {
       this.user = user;
     },(error)=>{ 
       console.error(error);

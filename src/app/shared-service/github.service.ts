@@ -24,6 +24,10 @@ export class GithubService {
   getRepos(login:string) {
     return this._http.get(this.baseUrl+'/users/'+login+'/repos',this.options).map((response:Response)=>response.json()).catch(this.errorHandler);
   }
+  
+  getRepoInfo(repo:string) {
+    return this._http.get(this.baseUrl+'/repos/'+repo,this.options).map((response:Response)=>response.json()).catch(this.errorHandler);
+  }
 
   errorHandler(error:Response) {
     return Observable.throw(error||"SERVE ERROR");

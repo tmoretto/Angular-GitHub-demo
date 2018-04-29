@@ -9,9 +9,12 @@ import { UsuarioCardComponent } from './components/usuario-card/usuario-card.com
 import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
 import { RepositorioListComponent } from './components/repositorio-list/repositorio-list.component';
 import { RepositorioInfoComponent } from './components/repositorio-info/repositorio-info.component';
+import { HomeComponent } from './components/home/home.component';
 
 const appRoutes: Routes = [
-  {path: 'repo', component: RepositorioInfoComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
+  { path: 'repo', component: RepositorioInfoComponent}
 ];
 
 @NgModule({
@@ -20,7 +23,8 @@ const appRoutes: Routes = [
     UsuarioCardComponent,
     UsuarioFormComponent,
     RepositorioListComponent,
-    RepositorioInfoComponent
+    RepositorioInfoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

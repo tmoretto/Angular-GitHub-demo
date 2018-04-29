@@ -1,16 +1,1 @@
-<div class="container">
-    <div style="margin-top: 20px">
-        <app-usuario-form (usuarioLocalizado)="aoLocalizarUsuario($event)"></app-usuario-form>
-    </div>
-
-    <div class="row" style="margin-top: 20px;margin-bottom: 20px" *ngIf="user">
-        <div class="col-sm-4">
-            <app-usuario-card [usuarioLocalizado]="user" (repositorios)="aoLocalizarRepositorios($event)" ></app-usuario-card>
-        </div>
-        <div class="col-sm-8" *ngIf="repos">
-          <app-repositorio-list [repositorios]="repos"></app-repositorio-list>
-        </div>
-      </div>
-
-</div>
-
+<router-outlet></router-outlet>

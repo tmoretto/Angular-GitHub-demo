@@ -4,5 +4,5 @@ export class Repo {
     full_name: string;
     stargazers_count: number;
     description: string;
-    url: string;
+    html_url: string;
 }

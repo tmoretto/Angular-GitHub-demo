@@ -15,6 +15,8 @@ export class GithubService {
   private headers = new Headers({'Content-Type' : 'application/json'});
   private options = new RequestOptions({headers: this.headers});
 
+  private repo = new Repo();
+
   constructor(private _http: Http) { }
 
   getUser(login: string) {
@@ -39,4 +41,11 @@ export class GithubService {
     return Observable.throw(error || 'SERVE ERROR');
   }
 
+  setter(repo: Repo) {
+    this.repo = repo;
+  }
+
+  getter() {
+    return this.repo;
+  }
 }

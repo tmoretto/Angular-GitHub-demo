@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Repo } from '../../repo';
+import { Router } from '@angular/router';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-repositorio-list',
@@ -9,8 +11,10 @@ import { Repo } from '../../repo';
 export class RepositorioListComponent implements OnInit {
 
   @Input() repositorios: Repo[];
+  repo: Repo;
+  closeResult: string;
 
-  constructor() { }
+  constructor(private modalService: NgbModal, private _router: Router) { }
 
   ngOnInit() {
   }
@@ -32,4 +36,24 @@ export class RepositorioListComponent implements OnInit {
       return 0;
     });
   }
+
+  verDetalhes(repo: Repo, content) {
+    this.repo = repo;
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
 }

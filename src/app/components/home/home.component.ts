@@ -24,4 +24,5 @@ export class HomeComponent implements OnInit {
   aoLocalizarRepositorios(repositorios) {
     this.repos = repositorios;
   }
+
 }

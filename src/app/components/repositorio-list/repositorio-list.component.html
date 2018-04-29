@@ -2,13 +2,68 @@
   <thead class="thead-light">
     <th>Nome do Repositório</th>
     <th>#Stars</th>
+    <th></th>
   </thead>
   <tbody>
     <tr *ngFor="let repo of repositorios">
       <td>{{repo.name}}</td>
       <td>{{repo.stargazers_count}}</td>
+      <td><button class="btn btn-lg btn-outline-primary" (click)="verDetalhes(repo, content)">Detalhes</button></td>
     </tr>
   </tbody>
 </table>
+<hr>
 <button class="btn btn-primary" (click)="sortByName()">Ordenar por Nome</button>
 <button class="btn btn-primary" (click)="sortByStar()">Ordenar por Stars</button>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">{{repo.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <h6>Detalhes</h6>
+    <table class="table table-condensed table-responsive">
+        <tbody>
+            <tr>        
+                <td>
+                    <strong>
+                        Descrição                                            
+                    </strong>
+                </td>
+                <td class="text-primary">
+                  {{repo.description}}
+                </td>
+            </tr>
+            <tr>        
+                <td>
+                    <strong>
+                        # Stars                                              
+                    </strong>
+                </td>
+                <td class="text-primary">
+                  {{repo.stargazers_count}}
+                </td>
+            </tr>
+            <tr>        
+                <td>
+                    <strong>
+                        Link GitHub                                                
+                    </strong>
+                </td>
+                <td class="text-primary">
+                    <a href="{{repo.html_url}}" target="_blank" > {{repo.html_url}}</a>
+                </td>
+            </tr>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fechar</button>
+  </div>
+</ng-template>
+
+<hr>

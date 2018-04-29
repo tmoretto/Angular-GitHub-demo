@@ -9,8 +9,8 @@ import { Repo } from './repo';
 })
 export class AppComponent {
   title = 'app';
-  user : User;
-  repos : Repo[];
+  user: User;
+  repos: Repo[];
 
   aoLocalizarUsuario(usuarioLocalizado) {
     this.user = usuarioLocalizado;

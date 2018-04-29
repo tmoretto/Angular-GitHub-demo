@@ -10,24 +10,22 @@ import { Repo } from '../../repo';
 })
 export class UsuarioCardComponent implements OnInit {
 
-  @Input() usuarioLocalizado : User;
+  @Input() usuarioLocalizado: User;
   @Output() repositorios = new EventEmitter();
-  repos : Repo[];
+  repos: Repo[];
 
-  constructor(private _githubService:GithubService) { }
+  constructor(private _githubService: GithubService) { }
 
   ngOnInit() {
   }
 
   localizarRepositorios() {
-    console.log(">>> " + this.usuarioLocalizado.login);
-    
     this._githubService.getRepos(this.usuarioLocalizado.login).subscribe((repos) => {
       this.repos = repos;
       this.repositorios.emit(this.repos);
-    },(error)=>{ 
+    }, (error) => {
       console.error(error);
     });
   }
-  
+
 }

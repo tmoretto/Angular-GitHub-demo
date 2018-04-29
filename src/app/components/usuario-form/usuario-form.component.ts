@@ -9,10 +9,10 @@ import { GithubService } from '../../shared-service/github.service';
 })
 export class UsuarioFormComponent implements OnInit {
 
-  user : User;
+  user: User;
   @Output() usuarioLocalizado = new EventEmitter();
 
-  constructor(private _githubService:GithubService) { }
+  constructor(private _githubService: GithubService) { }
 
   ngOnInit() {
   }
@@ -22,7 +22,7 @@ export class UsuarioFormComponent implements OnInit {
       this._githubService.getUser(userLogin).subscribe((user) => {
         this.user = user;
         this.usuarioLocalizado.emit(this.user);
-      },(error)=>{ 
+      }, (error) => {
         this.usuarioLocalizado.emit(null);
         console.error(error);
       });

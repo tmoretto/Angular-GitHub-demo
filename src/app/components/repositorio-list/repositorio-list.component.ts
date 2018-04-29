@@ -8,7 +8,7 @@ import { Repo } from '../../repo';
 })
 export class RepositorioListComponent implements OnInit {
 
-  @Input() repositorios : Repo[];
+  @Input() repositorios: Repo[];
 
   constructor() { }
 
@@ -20,7 +20,7 @@ export class RepositorioListComponent implements OnInit {
         return (repo1.stargazers_count - repo2.stargazers_count);
     }).reverse();
   }
-  
+
   sortByName() {
     this.repositorios = this.repositorios.sort((repo1, repo2) => {
       if (repo1.name.toLowerCase() > repo2.name.toLowerCase()) {

@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src={{usuarioLocalizado.avatar_url}}  >
+    <div class="card-body">
+      <h5 class="card-title">{{usuarioLocalizado.login}}</h5>
+      <p class="card-text">{{usuarioLocalizado.name}}</p>
+      <p class="card-text">{{usuarioLocalizado.bio}}</p>
+      <p class="card-text">following: <strong>{{usuarioLocalizado.following}}</strong></p>
+      <p class="card-text">followers: <strong>{{usuarioLocalizado.followers}}</strong></p>
+    </div>
+    <button class="btn btn-primary" (click)="localizarRepositorios()">Ver Repositórios</button>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from './user';
+import { Repo } from './repo';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  user : User;
+  repos : Repo[];
+
+  aoLocalizarUsuario(usuarioLocalizado) {
+    this.user = usuarioLocalizado;
+    this.repos = null;
+  }
+
+  aoLocalizarRepositorios(repositorios) {
+    this.repos = repositorios;
+  }
+
 }

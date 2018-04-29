@@ -5,22 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { GithubService } from './shared-service/github.service';
-import { ListuserComponent } from './components/listuser/listuser.component';
-import { ListrepoComponent } from './components/listrepo/listrepo.component';
-import { FinduserComponent } from './components/finduser/finduser.component';
+import { UsuarioCardComponent } from './components/usuario-card/usuario-card.component';
+import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
+import { RepositorioListComponent } from './components/repositorio-list/repositorio-list.component';
 
 const appRoutes:Routes=[
-  { path: 'finduser', component:FinduserComponent },
-  { path: 'user', component:ListuserComponent },
-  { path: 'repos', component:ListrepoComponent },
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListuserComponent,
-    ListrepoComponent,
-    FinduserComponent
+    UsuarioCardComponent,
+    UsuarioFormComponent,
+    RepositorioListComponent
   ],
   imports: [
     BrowserModule,

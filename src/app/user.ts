@@ -3,6 +3,7 @@ export class User {
     name:string;
     login:string
     avatar_url:string;
-    followers_url:string;
-    following_url:string;     
+    bio:string;
+    followers:Number;
+    following:Number;
 }
